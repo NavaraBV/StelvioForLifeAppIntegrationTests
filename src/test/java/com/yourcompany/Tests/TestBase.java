@@ -11,7 +11,12 @@ import com.saucelabs.junit.ConcurrentParameterized;
 import com.saucelabs.junit.SauceOnDemandTestWatcher;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.junit.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.rules.TestName;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -168,6 +173,8 @@ public class TestBase implements SauceOnDemandSessionIdProvider {
         //You can set this manually on manual runs.
         buildTag = System.getenv("BUILD_TAG");
 
-        app = "https://github.com/saucelabs-sample-test-frameworks/GuineaPig-Sample-App/blob/master/android/GuineaPigApp-debug.apk?raw=true";
+        // TODO: create a path to the app we're going to test
+        app = "~/example-apps/redesign/bankingnl-localhost.apk";
+        // app = "https://github.com/saucelabs-sample-test-frameworks/GuineaPig-Sample-App/blob/master/android/GuineaPigApp-debug.apk?raw=true";
     }
 }
